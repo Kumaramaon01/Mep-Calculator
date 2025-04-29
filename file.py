@@ -21,16 +21,26 @@ st.markdown(rainbow_title, unsafe_allow_html=True)
 
 # About section
 st.markdown("""
-<div style='text-align: left; font-size:18px; background-color: #f0f2f6; padding: 15px; border-radius: 8px;'>
+<div style='
+    width: 100%;
+    text-align: left;
+    font-size: 18px;
+    background-color: #f0f2f6;
+    padding: 15px;
+    border-radius: 8px;
+    box-sizing: border-box;
+'>
 <b>About the MEP Calculator</b><br><br>
 The <b>MEP Calculator</b> is a tool to help working on energy-efficient building projects, such as LEED-certified projects, update and analyze MEP performance values.<br><br>
+
 <b>Key Features:</b><br>
 - Upload and process four SIM files representing different rotations.<br>
 - Automatically update MEP values in an Excel sheet based on the performance data extracted from the SIM files.<br>
-- Allows downloading of the modified Excel file.<br>
+- Display the updated table and allow downloading of the modified Excel file.<br>
 - Useful for energy-efficient building design, particularly for LEED projects.<br>
 </div>
 """, unsafe_allow_html=True)
+
 
 sim_files = st.file_uploader("Choose 4 SIM files", type=["sim"], accept_multiple_files=True)
 csv_file = r'tables/MEP Calculator.csv'
