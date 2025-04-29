@@ -4,7 +4,11 @@ import tempfile
 from src import ps_e  # Ensure this module has get_PSE_report(sim_path)
 
 # Set wide layout
-st.set_page_config(layout="wide")
+st.set_page_config(
+    page_title="MEP Calculator",
+    page_icon="🚰",
+    layout='wide'
+)
 
 # Rainbow-colored title
 rainbow_title = """
