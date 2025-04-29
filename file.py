@@ -144,7 +144,7 @@ if st.button("Process Files"):
 
         # Show updated DataFrame and download option
         st.success("Files processed and CSV updated successfully!")
-        st.dataframe(df)
+        # st.dataframe(df)
 
         st.download_button(
             label="Download Modified CSV",
