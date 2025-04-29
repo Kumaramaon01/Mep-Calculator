@@ -1,1 +1,4 @@
 xlwings
+streamlit
+pandas
+openpyxl
