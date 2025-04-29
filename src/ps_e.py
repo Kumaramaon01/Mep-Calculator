@@ -54,7 +54,7 @@ def get_PSE_report(name):
             # strore list to dataframe
             pse_df = pd.DataFrame(result) 
             # # Allot lvb_df columns from sim file
-            pse_df.columns = ['UNIT', 'LIGHTS', 'TASK_LIGHTS', 'MISC_EQUIP', 'SPACE_EQUIP', 
+            pse_df.columns = ['UNIT', 'LIGHTS', 'TASK_LIGHTS', 'MISC_EQUIP', 'SPACE_HEATING', 
                                  'SPACE_COOLING', 'HEAT_REJECT', 'PUMPS & AUX', 'VENT FANS', 'REFRIG DISPLAY',
                                  'HT PUMP SUPPLEM', 'DOMEST HOT WTR', 'EXT USAGE', 'TOTAL']
             
@@ -104,8 +104,8 @@ def get_PSE_report(name):
             # Iterate over DataFrame indices
             j = 0
             for i in range(len(pse_df)):
-                if pse_df['LIGHTS'].iloc[i] == 'JAN':  # Check if the current row's LIGHTS value is 'JAN'
-                    new_row = {'UNIT': values2[j]}  # Take the value from values2 cyclically
+                if pse_df['LIGHTS'].iloc[i] == 'JAN':
+                    new_row = {'UNIT': values2[j]}
                     pse_df = pd.concat([pse_df.iloc[:i], pd.DataFrame([new_row]), pse_df.iloc[i:]]).reset_index(drop=True)
                     j += 1
                     if(j == countMeters):
