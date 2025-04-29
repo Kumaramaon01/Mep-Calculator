@@ -144,7 +144,7 @@ if st.button("Process Files"):
         df['Baseline 180° rotation'][51] = 0
         df['Baseline 270° rotation'][51] = 0
         df['Baseline Design Total (Average of 4 rotations)'] = df[cols].sum(axis=1) / 4
-
+        st.dataframe(df)
         # Show updated DataFrame and download option
         st.success("Files processed and CSV updated successfully!")
         # st.dataframe(df)
